@@ -1,21 +1,24 @@
-var tempoInicial = $("#tempoRestante").text();
 var campo = $(".campodigitacao");
-var frase = $(".frase").text();
+var tempoInicial = $("#tempoRestante").text();
 
 $(function () {
     atualizaTamanhoFrase();
     inicializaContadores();
     inicializaCronometro();
     inicializaMarcadores();
-
     $("#botaoReiniciar").click(reiniciaJogo);
-
 });
 
-function atualizaTamanhoFrase() {
+function atualizaTamanhoFrase(frase) {
+    var frase = $(".frase").text();
     var numPalavras = frase.split(" ").length;
     var tamanhoFrase = $("#quantidadepalavras");
     tamanhoFrase.text(numPalavras);
+}
+
+function atualizaTempoInicial(tempo) {
+    tempoInicial = tempo;
+    $("#tempoRestante").text(tempo);
 }
 
 function inicializaContadores(){
@@ -30,8 +33,9 @@ function inicializaContadores(){
 
 
 function inicializaCronometro() {
-    var tempoRestante = $('#tempoRestante').text();
+
     campo.one("focus", function () {
+        var tempoRestante = $('#tempoRestante').text();
         var id = setInterval(function () {
             tempoRestante--;
             $('#tempoRestante').text(tempoRestante);
@@ -62,11 +66,9 @@ function reiniciaJogo(){
 
 function inicializaMarcadores(){
     campo.on('input',function () {
+        var frase = $('.frase').text();
         var digitado = campo.val();
         var comparavel = frase.substr(0,digitado.length)
-        // console.log(frase);
-        console.log(digitado);
-        console.log(comparavel);
         if (digitado==comparavel){
             campo.addClass("campo-correto");
             campo.removeClass("campo-incorreto");
