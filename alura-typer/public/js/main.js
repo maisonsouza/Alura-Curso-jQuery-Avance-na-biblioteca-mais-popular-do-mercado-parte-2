@@ -7,6 +7,7 @@ $(function () {
     inicializaCronometro();
     inicializaMarcadores();
     $("#botaoReiniciar").click(reiniciaJogo);
+    atualizaPlacar();
 });
 
 function atualizaTamanhoFrase(frase) {
