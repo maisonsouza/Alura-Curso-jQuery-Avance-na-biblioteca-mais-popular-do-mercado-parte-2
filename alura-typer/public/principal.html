@@ -5,6 +5,9 @@
     <title>Alura Typer</title>
     <link rel="stylesheet" href="css/libs/materialize.min.css">
     <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/libs/selectize.default.css">
+    <link rel="stylesheet" href="css/libs/tooltipster.bundle.min.css">
+
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -36,9 +39,20 @@
     </button>
     <button class="btn-floating btn-large waves-effect waves-light blue" id="botaoFraseId"><i class="material-icons">repeat_one</i>
     </button>
-    <button class="btn-floating btn-large waves-effect waves-light yellow" id="botaoSync"><i class="material-icons">swap_vert</i>
-</button>
     <input type="number" min="0" id="idFrase">
+    <div class="select-usuarios">
+        <select id="usuarios">
+            <option value="Maison">Maison</option>
+            <option value="Jose">Jose</option>
+            <option value="Luciano">Luciano</option>
+            <option value="Socorro">Socorro</option>
+        </select>
+    </div>
+    <button class="tooltip btn-floating btn-large waves-effect waves-light yellow" title="" id="botaoSync"><i class="material-icons">swap_vert</i>
+</button>
+
+
+
 
     <ul class="center">
         <li><span id="contador-caracteres">0</span> caracteres</li>
@@ -64,5 +78,8 @@
 <script src="js/main.js"></script>
 <script src="js/placar.js"></script>
 <script src="js/frase.js"></script>
+<script src="js/selectize.js"></script>
+<script src="js/tooltipster.bundle.min.js"></script>
+
 </body>
 </html>

@@ -7,8 +7,18 @@ $(function () {
     inicializaCronometro();
     inicializaMarcadores();
     $("#botaoReiniciar").click(reiniciaJogo);
+    $('.tooltip').tooltipster();
     atualizaPlacar();
+
+    $("#usuarios").selectize({
+        create: true,
+        sortField: 'text'
+    });
+    $('.tooltip').tooltipster({
+        trigger:'custom'
+    });
 });
+
 
 function atualizaTamanhoFrase(frase) {
     var frase = $(".frase").text();
